@@ -1,0 +1,7 @@
+name: 'Market Feed'
+type: module
+description: 'Ingests stock price data at scale and displays market feed prices with caching and filtering.'
+package: Custom
+core_version_requirement: ^10 || ^11
+php: 8.1
+

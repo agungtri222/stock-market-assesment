@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the market_feed module.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_schema().
+ */
+function market_feed_schema(): array {
+  $schema['market_feed_prices'] = [
+    'description' => 'Stores the latest stock price and trading volume feed.',
+    'fields' => [
+      'symbol' => [
+        'description' => 'Stock ticker symbol (e.g. AAPL, MSFT).',
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'price' => [
+        'description' => 'Latest trading price.',
+        'type' => 'numeric',
+        'precision' => 12,
+        'scale' => 4,
+        'not null' => TRUE,
+        'default' => 0.0000,
+      ],
+      'change_amount' => [
+        'description' => 'Net change amount in price.',
+        'type' => 'numeric',
+        'precision' => 12,
+        'scale' => 4,
+        'not null' => TRUE,
+        'default' => 0.0000,
+      ],
+      'volume' => [
+        'description' => 'Total traded volume.',
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'updated_at' => [
+        'description' => 'UNIX timestamp when the record was inserted or updated.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['symbol'],
+    'indexes' => [
+      'idx_updated_at' => ['updated_at'],
+      'idx_volume' => ['volume'],
+    ],
+  ];
+
+  return $schema;
+}
+

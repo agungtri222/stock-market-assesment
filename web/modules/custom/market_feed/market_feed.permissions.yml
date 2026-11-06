@@ -1,0 +1,9 @@
+import market feed data:
+  title: 'Import market feed data'
+  description: 'Allow machine-to-machine or authorized clients to push price snapshots via the REST import endpoint.'
+  restrict access: true
+
+view market feed prices:
+  title: 'View market feed prices'
+  description: 'Allow users to access the market feed price board and search by stock symbol.'
+

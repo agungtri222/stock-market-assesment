@@ -1,0 +1,39 @@
+# Composer vendor directory
+/vendor/
+
+# Drupal core scaffolded files
+/web/core/
+/web/autoload.php
+/web/autoload_runtime.php
+/web/index.php
+/web/update.php
+/web/robots.txt
+/web/.htaccess
+/web/.ht.router.php
+
+# Contributed projects
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+/web/libraries/
+
+# Drupal sites dynamic files and credentials
+/web/sites/*/files/
+/web/sites/*/settings.php
+/web/sites/*/settings.local.php
+/web/sites/*/services.local.yml
+
+# Environment and sensitive files
+.env
+.env.*
+*.sqlite
+*.sqlite*
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+

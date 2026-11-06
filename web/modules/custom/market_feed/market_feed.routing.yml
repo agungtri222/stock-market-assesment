@@ -1,0 +1,17 @@
+market_feed.api.import:
+  path: '/api/market-feed/import'
+  defaults:
+    _controller: '\Drupal\market_feed\Controller\MarketFeedApiController::import'
+  methods: [POST]
+  requirements:
+    _permission: 'import market feed data'
+    _format: 'json'
+
+market_feed.view:
+  path: '/market-feed'
+  defaults:
+    _controller: '\Drupal\market_feed\Controller\MarketFeedViewController::view'
+    _title: 'Market Feed - Live Stock Prices'
+  requirements:
+    _permission: 'view market feed prices'
+
